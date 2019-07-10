@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
     return CupertinoPageScaffold(
       backgroundColor: Color(0xFF2B292A),
       navigationBar: CupertinoNavigationBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color(0xFF2B292A),
         border: Border.all(
           style: BorderStyle.none,
         ),
@@ -30,18 +30,18 @@ class _HomePageState extends State<HomePage> {
       child: Stack(
         children: <Widget>[
           Positioned(
-            top: 68.0,
+            top: 0.0,
             left: 0.0,
             right: 0.0,
             child: Container(
               width: double.infinity,
-              height: MediaQuery.of(context).size.height - (MediaQuery.of(context).size.height / 2.1) - 120.0 - 68.0,
+              height: MediaQuery.of(context).size.height - (MediaQuery.of(context).size.height / 2.0) - 120.0,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     RichText(
                       textAlign: TextAlign.start,
@@ -71,6 +71,37 @@ class _HomePageState extends State<HomePage> {
                         SquareButton(),
                       ],
                     ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 16.0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
+                        children: <Widget>[
+                          Container(
+                            width: 7.0,
+                            height: 7.0,
+                            decoration: BoxDecoration(
+                              color: Color(0xFFB42827),
+                              borderRadius: BorderRadius.circular(5.0),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 8.0,
+                          ),
+                          Text(
+                            'Service Request',
+                            style: Theme.of(context).textTheme.subtitle.copyWith(color: Colors.white),
+                          ),
+                          Expanded(
+                            child: SizedBox(),
+                          ),
+                          Icon(
+                            CupertinoIcons.ellipsis,
+                            color: Colors.white,
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -81,7 +112,7 @@ class _HomePageState extends State<HomePage> {
             left: 0.0,
             right: 0.0,
             child: Container(
-              height: MediaQuery.of(context).size.height / 2.1,
+              height: MediaQuery.of(context).size.height / 2.0,
             ),
           ),
           Positioned(
