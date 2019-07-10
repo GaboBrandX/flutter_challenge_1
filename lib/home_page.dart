@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wg_by_sarah_d/widgets/page_view_card.dart';
 import 'package:wg_by_sarah_d/widgets/square_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:wg_by_sarah_d/widgets/tracking_lines.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,9 +12,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _currentIndex = 1;
+  PageController _pageController = PageController(
+    viewportFraction: 0.92,
+    initialPage: 1,
+  );
+
   @override
   void initState() {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+    _pageController.addListener(() {
+      setState(() => _currentIndex = _pageController.page.round());
+    });
     super.initState();
   }
 
@@ -71,15 +82,15 @@ class _HomePageState extends State<HomePage> {
                           label: 'Lookup',
                         ),
                         SquareButton(
-                          icon: Icon(Icons.person),
+                          icon: Icon(FontAwesomeIcons.userAlt),
                           label: 'Customer',
                         ),
                         SquareButton(
-                          icon: Icon(Icons.headset_mic),
+                          icon: Icon(FontAwesomeIcons.headset),
                           label: 'Contacts',
                         ),
                         SquareButton(
-                          icon: Icon(Icons.chat),
+                          icon: Icon(FontAwesomeIcons.solidComments),
                           label: 'Message',
                         ),
                       ],
@@ -125,7 +136,34 @@ class _HomePageState extends State<HomePage> {
             left: 0.0,
             right: 0.0,
             child: Container(
-              height: MediaQuery.of(context).size.height / 1.8,
+              height: MediaQuery.of(context).size.height / 1.8 - 68.0,
+              child: Stack(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 40.0),
+                    child: PageView(
+                      controller: _pageController,
+                      children: <Widget>[
+                        PageViewCard(),
+                        PageViewCard(),
+                        PageViewCard(),
+                        PageViewCard(),
+                        PageViewCard(),
+                      ],
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 16.0),
+                      child: TrackingLines(
+                        length: 5,
+                        currentIndex: _currentIndex,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Positioned(

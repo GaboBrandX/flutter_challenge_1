@@ -24,7 +24,7 @@ class SquareButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(20.0),
             onPressed: () {},
             color: Color(0xFFB42827),
-            child: Icon(icon.icon, size: 30.0,),
+            child: Icon(icon.icon, size: 26.0,),
           ),
         ),
         SizedBox(
