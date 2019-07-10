@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
             right: 0.0,
             child: Container(
               width: double.infinity,
-              height: MediaQuery.of(context).size.height - (MediaQuery.of(context).size.height / 2.0) - 120.0,
+              height: MediaQuery.of(context).size.height - (MediaQuery.of(context).size.height / 1.8) - 120.0,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Column(
@@ -125,7 +125,7 @@ class _HomePageState extends State<HomePage> {
             left: 0.0,
             right: 0.0,
             child: Container(
-              height: MediaQuery.of(context).size.height / 2.0,
+              height: MediaQuery.of(context).size.height / 1.8,
             ),
           ),
           Positioned(
