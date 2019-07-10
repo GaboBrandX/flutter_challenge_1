@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wg_by_sarah_d/widgets/square_button.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -65,10 +66,22 @@ class _HomePageState extends State<HomePage> {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        SquareButton(),
-                        SquareButton(),
-                        SquareButton(),
-                        SquareButton(),
+                        SquareButton(
+                          icon: Icon(FontAwesomeIcons.search),
+                          label: 'Lookup',
+                        ),
+                        SquareButton(
+                          icon: Icon(Icons.person),
+                          label: 'Customer',
+                        ),
+                        SquareButton(
+                          icon: Icon(Icons.headset_mic),
+                          label: 'Contacts',
+                        ),
+                        SquareButton(
+                          icon: Icon(Icons.chat),
+                          label: 'Message',
+                        ),
                       ],
                     ),
                     Padding(
