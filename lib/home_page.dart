@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool _isDrawerOpen = false;
   int _currentIndex = 1;
   PageController _pageController = PageController(
     viewportFraction: 0.92,
@@ -43,7 +44,12 @@ class _HomePageState extends State<HomePage> {
                 style: BorderStyle.none,
               ),
               actionsForegroundColor: Colors.white,
-              leading: Icon(IconData(0xF394, fontFamily: CupertinoIcons.iconFont, fontPackage: CupertinoIcons.iconFontPackage)),
+              leading: GestureDetector(
+                onTap: () => setState(() => _isDrawerOpen = true),
+                child: Icon(
+                  IconData(0xF394, fontFamily: CupertinoIcons.iconFont, fontPackage: CupertinoIcons.iconFontPackage),
+                ),
+              ),
             ),
           ),
           Positioned(
@@ -238,10 +244,12 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          Positioned(
+          AnimatedPositioned(
+            duration: Duration(milliseconds: 300),
+            curve: Curves.easeIn,
             top: 0.0,
             bottom: 0.0,
-            left: 0.0,
+            left: _isDrawerOpen ? 0.0 : -(MediaQuery.of(context).size.width / 3) * 2,
             child: Container(
               width: (MediaQuery.of(context).size.width / 3) * 2,
               height: double.infinity,
@@ -252,6 +260,22 @@ class _HomePageState extends State<HomePage> {
                     width: double.infinity,
                     height: MediaQuery.of(context).size.height - (MediaQuery.of(context).size.height / 1.8 - 68.0) - 120.0,
                     color: Color(0xFFB42827),
+                    child: Stack(
+                      children: <Widget>[
+                        Positioned(
+                          top: 20.0,
+                          left: 10.0,
+                          child: GestureDetector(
+                            onTap: () => setState(() => _isDrawerOpen = false),
+                            child: Icon(
+                              CupertinoIcons.clear,
+                              color: Colors.white,
+                              size: 40.0,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
