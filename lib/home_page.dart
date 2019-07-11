@@ -287,7 +287,7 @@ class _HomePageState extends State<HomePage> {
                         Align(
                           alignment: Alignment.bottomLeft,
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 46.0, bottom: 24.0),
+                            padding: const EdgeInsets.only(left: 46.0, bottom: 46.0),
                             child: UserInfo(
                               picture: 'https://shopolo.hu/wp-content/uploads/2019/04/profile1-%E2%80%93-kopija.jpeg',
                               name: 'Ryan',

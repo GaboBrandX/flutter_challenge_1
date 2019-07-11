@@ -21,6 +21,7 @@ class UserInfo extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Card(
+          margin: EdgeInsets.zero,
           elevation: 2.0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.0),
@@ -38,7 +39,7 @@ class UserInfo extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 6.0,
+          height: 9.0,
         ),
         Row(
           children: <Widget>[
@@ -67,14 +68,14 @@ class UserInfo extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 4.0,
+          height: 6.0,
         ),
         Text(
           id,
           style: Theme.of(context).textTheme.caption.copyWith(color: Colors.white.withOpacity(0.6)),
         ),
         SizedBox(
-          height: 2.0,
+          height: 6.0,
         ),
         Text(
           company,
