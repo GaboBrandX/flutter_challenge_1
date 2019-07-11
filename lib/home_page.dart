@@ -31,18 +31,23 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       backgroundColor: Color(0xFF2B292A),
-      navigationBar: CupertinoNavigationBar(
-        backgroundColor: Color(0xFF2B292A),
-        border: Border.all(
-          style: BorderStyle.none,
-        ),
-        actionsForegroundColor: Colors.white,
-        leading: Icon(IconData(0xF394, fontFamily: CupertinoIcons.iconFont, fontPackage: CupertinoIcons.iconFontPackage)),
-      ),
       child: Stack(
         children: <Widget>[
           Positioned(
             top: 0.0,
+            left: 0.0,
+            right: 0.0,
+            child: CupertinoNavigationBar(
+              backgroundColor: Color(0xFF2B292A),
+              border: Border.all(
+                style: BorderStyle.none,
+              ),
+              actionsForegroundColor: Colors.white,
+              leading: Icon(IconData(0xF394, fontFamily: CupertinoIcons.iconFont, fontPackage: CupertinoIcons.iconFontPackage)),
+            ),
+          ),
+          Positioned(
+            top: 68.0,
             left: 0.0,
             right: 0.0,
             child: Container(
@@ -228,6 +233,25 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            top: 0.0,
+            bottom: 0.0,
+            left: 0.0,
+            child: Container(
+              width: (MediaQuery.of(context).size.width / 3) * 2,
+              height: double.infinity,
+              color: Colors.white,
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: double.infinity,
+                    height: MediaQuery.of(context).size.height - (MediaQuery.of(context).size.height / 1.8 - 68.0) - 120.0,
+                    color: Color(0xFFB42827),
                   ),
                 ],
               ),
