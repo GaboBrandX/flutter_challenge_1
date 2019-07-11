@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            top: 68.0,
+            top: 90.0,
             left: 0.0,
             right: 0.0,
             child: Container(
@@ -147,7 +147,7 @@ class _HomePageState extends State<HomePage> {
             left: 0.0,
             right: 0.0,
             child: Container(
-              height: MediaQuery.of(context).size.height / 1.8 - 68.0,
+              height: MediaQuery.of(context).size.height / 1.8 - 90.0,
               child: Stack(
                 children: <Widget>[
                   Padding(
@@ -253,18 +253,26 @@ class _HomePageState extends State<HomePage> {
             child: Container(
               width: (MediaQuery.of(context).size.width / 3) * 2,
               height: double.infinity,
-              color: Colors.white,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.3),
+                    blurRadius: 5.0,
+                  ),
+                ],
+              ),
               child: Stack(
                 children: <Widget>[
                   Container(
                     width: double.infinity,
-                    height: MediaQuery.of(context).size.height - (MediaQuery.of(context).size.height / 1.8 - 68.0) - 120.0,
+                    height: MediaQuery.of(context).size.height - (MediaQuery.of(context).size.height / 1.8 - 90.0) - 120.0,
                     color: Color(0xFFB42827),
                     child: Stack(
                       children: <Widget>[
                         Positioned(
-                          top: 20.0,
-                          left: 10.0,
+                          top: 50.0,
+                          left: 20.0,
                           child: GestureDetector(
                             onTap: () => setState(() => _isDrawerOpen = false),
                             child: Icon(
