@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wg_by_sarah_d/widgets/menu_item.dart';
 import 'package:wg_by_sarah_d/widgets/page_view_card.dart';
 import 'package:wg_by_sarah_d/widgets/square_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -283,6 +284,36 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ],
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      width: double.infinity,
+                      height: MediaQuery.of(context).size.height / 1.8 + 30.0,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 46.0, top: 46.0),
+                        child: Column(
+                          children: <Widget>[
+                            MenuItem(
+                              icon: Icon(FontAwesomeIcons.solidBell),
+                              label: 'Message center',
+                            ),
+                            MenuItem(
+                              icon: Icon(FontAwesomeIcons.clipboardList),
+                              label: 'Ticket research',
+                            ),
+                            MenuItem(
+                              icon: Icon(FontAwesomeIcons.shieldAlt),
+                              label: 'Suggestion',
+                            ),
+                            MenuItem(
+                              icon: Icon(Icons.phone),
+                              label: 'Contact us',
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ],
