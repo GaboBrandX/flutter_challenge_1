@@ -6,6 +6,7 @@ import 'package:wg_by_sarah_d/widgets/page_view_card.dart';
 import 'package:wg_by_sarah_d/widgets/square_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:wg_by_sarah_d/widgets/tracking_lines.dart';
+import 'package:wg_by_sarah_d/widgets/user_info.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -280,6 +281,18 @@ class _HomePageState extends State<HomePage> {
                               CupertinoIcons.clear,
                               color: Colors.white,
                               size: 40.0,
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.bottomLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 46.0, bottom: 24.0),
+                            child: UserInfo(
+                              picture: 'https://shopolo.hu/wp-content/uploads/2019/04/profile1-%E2%80%93-kopija.jpeg',
+                              name: 'Ryan',
+                              id: '0023-Ryan',
+                              company: 'Universal Data Center',
                             ),
                           ),
                         ),
