@@ -1,6 +1,6 @@
 # Flutter challenge #1 — Cupertino widgets and a simple custom Drawer for iOS.
 
-Based on Wg by Sarah-D.
+Based on Wg by [Sarah-D](https://dribbble.com/Sarah-D).
 
 ## Tutorial
 
