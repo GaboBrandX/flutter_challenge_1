@@ -1,4 +1,4 @@
-# Dribbble challenge #1 — Cupertino widgets and a simple custom Drawer for iOS.
+# Flutter challenge #1 — Cupertino widgets and a simple custom Drawer for iOS.
 
 Based on Wg by Sarah-D.
 
